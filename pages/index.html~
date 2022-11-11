@@ -1,0 +1,22 @@
+<html>
+<head>
+</head>
+<link href="../css/index.css" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fanwood+Text&family=Roboto:wght@300&display=swap" rel="stylesheet">
+<body>
+	<h1>Welcome</h1>
+	<h2>Log in to continue</h2>
+	<div id="usernameBox">
+		<h4>Username</h4>
+	</div>
+	<div id="passwordBox">
+		<h4>Password</h4>
+	</div>
+	<div id="loginBox">
+		<h5>Login</h5>
+	</div>
+	<h3>sign up</h3>
+</body>
+</html>
