@@ -1,2 +1,3 @@
 # BlogPHP
-##University Blogging site with PHP backend
+
+University Blogging site with PHP backend
