@@ -53,15 +53,66 @@ h2 {
 	left: calc(50% - 254px/2);
 }
 
-h5 {
+#credInput {
 	text-align: center;
-	color: white;
-	font-size: 25px;
+	border: none;
+	outline: none;
+	position: absolute;
+	left: 20px;
+	right: 20px;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	font-size: 20px;
+	font-weight: 300;
 	font-family: 'Roboto';
-	font-weight: 600;
-	height: 29px;
-	margin-top: 21px;
-	letter-spacing: 0.1em;
+	color: rgba(0,0,0,.5);
+}
+
+#credInput2 {
+	text-align: center;
+	border: none;
+	outline: none;
+	position: absolute;
+	left: 20px;
+	right: 20px;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	font-size: 20px;
+	font-weight: 300;
+	font-family: 'Roboto';
+	color: rgba(0,0,0,.5);
+}
+
+#notificationBox {
+	transition: all 1s;
+	opacity: 0;
+	height: 70px;
+	width: 422px;
+	position: absolute;
+	right: 57px;
+	bottom: -25px;
+	background-color: black;
+	box-shadow: 0px 4px 50px 10px rgba(0,0,0,.5);
+}
+
+#notificationMessage {
+	position: absolute;
+	font-family: 'Montserrat';
+	color: white;
+	font-size: 30px;
+	left: 9px;
+	top: 12px;
+}
+
+#notificationTimer {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 5px;
+	background: #FF4545;
 }
 
 h3 {
@@ -85,4 +136,15 @@ h4 {
 	font-size: 20px;
 	color: rgba(0,0,0,.5);
 	font-weight: 300;
+}
+
+h5 {
+	text-align: center;
+	color: white;
+	font-size: 25px;
+	font-family: 'Roboto';
+	font-weight: 600;
+	height: 29px;
+	margin-top: 21px;
+	letter-spacing: 0.1em;
 }
