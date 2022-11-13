@@ -19,8 +19,8 @@
 		callSQL($conn, $sqlCommand);
 	}	
 
-	function addUser($email, $username, $password, $phone, $picture) {
-		$sqlCommand = "INSERT INTO userInformation(email, password, phone, picture) VALUES($email, $username, $password, $picture)";
+	function addUser($conn, $email, $username, $password, $phone, $picture) {
+		$sqlCommand = "INSERT INTO userInformation(email, username, password, phone, picture) VALUES('$email', '$username', '$password', '$phone', '$picture')";
 		callSQL($conn, $sqlCommand);
 	}	
 		
@@ -44,19 +44,20 @@
 
 	//createDB($conn);
 	
-
 	if (isset($_POST['loginUsername']) and isset($_POST['loginPassword'])) {
 		validateUser($conn, $_POST['loginUsername'], $_POST['loginPassword']);
 	}
 
-	if (isset($_POST['signupEmail']) and isset($_POST['signupUsername']) and isset($_POST['signupPassword']) and isset($_POST['phone']) and isset($_POST['picture'])) {
+	if (isset($_POST['signupEmail']) and isset($_POST['signupUsername']) and isset($_POST['signupPassword']) and isset($_POST['signupPhone']) and isset($_POST['signupPicture'])) {
 		if (validateUser($conn, $_POST['signupUsername'], $_POST['signupPassword']) == "0") {
-			addUser($_POST['singupEmail'], $_POST['signupUsername'], $_POST['signupPassword'], $_POST['signupPhone'], $_POST['signupPicture']);
+			addUser($conn, $_POST['singupEmail'], $_POST['signupUsername'], $_POST['signupPassword'], $_POST['signupPhone'], $_POST['signupPicture']);
+			ob_clean();
+			echo "1";
 		}
 		else
 		{
 			ob_clean();
-			echo "0":
+			echo "0";
 		}
 	}
 ?>

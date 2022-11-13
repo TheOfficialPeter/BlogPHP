@@ -89,20 +89,33 @@ function openFiles(control) {
 }
 
 function signUp() {
+	var phoneInput = document.getElementById("credPhone");
 	var pictureInput = document.getElementById("credPicture");
 	var emailInput = document.getElementById("credEmail");
 	var usernameInput = document.getElementById("credUsername");
 	var passwordInput = document.getElementById("credPassword");
 
-	if (usernameInput.value == "" || passwordInput.value == "" || emailInput.value == "" || pictureInput.innerText == "Picture") {
+	if (usernameInput.value == "" || passwordInput.value == "" || emailInput.value == "" || phoneInput.value == "" || pictureInput.innerText == "Picture") {
 		notify("Some fields are empty!");
 	}
 	else
 	{
-		notify("Created account!");
+		$.ajax({
+			url: "../index.php",
+			type: "post",
+			dataType: "json",
+			data: {signupEmail: emailInput.value, signupUsername: usernameInput.value, signupPassword: passwordInput.value, signupPhone: phoneInput.value, signupPicture: pictureInput.value, loginUsername: "", loginPassword: ""},
+			success: function(result) {
+				if (result == 1) {
+					notify("Account created!");
+				}
+				else
+				{
+					notify("Account exists!");
+				}
+			}
+		});
 	}
-
-	// php database check + add 
 }
 
 window.onload = function() {

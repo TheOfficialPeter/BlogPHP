@@ -89,12 +89,13 @@ function openFiles(control) {
 }
 
 function signUp() {
+	var phoneInput = document.getElementById("credPhone");
 	var pictureInput = document.getElementById("credPicture");
 	var emailInput = document.getElementById("credEmail");
 	var usernameInput = document.getElementById("credUsername");
 	var passwordInput = document.getElementById("credPassword");
 
-	if (usernameInput.value == "" || passwordInput.value == "" || emailInput.value == "" || pictureInput.innerText == "Picture") {
+	if (usernameInput.value == "" || passwordInput.value == "" || emailInput.value == "" || phoneInput.value == "" || pictureInput.innerText == "Picture") {
 		notify("Some fields are empty!");
 	}
 	else
@@ -103,20 +104,18 @@ function signUp() {
 			url: "../index.php",
 			type: "post",
 			dataType: "json",
-			data: {loginUsername: usernameInput.value, loginPassword: passwordInput.value},
+			data: {signupEmail: emailInput.value, signupUsername: usernameInput.value, signupPassword: passwordInput.value, signupPhone: phoneInput.value, signupPicture: pictureInput.value},
 			success: function(result) {
-				if (result == 0) {
-					notify("User does not exist!");
+				if (result == 1) {
+					notify("Account created!");
 				}
 				else
 				{
-					notify("User found!");
+					notify("Account exists!");
 				}
 			}
 		});
 	}
-
-	// php database check + add 
 }
 
 window.onload = function() {
