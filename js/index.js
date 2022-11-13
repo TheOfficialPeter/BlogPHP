@@ -19,13 +19,16 @@ function editInput(control) {
 	},200);
 }
 
-function notify() {
+function notify(message) {
 	if (notificationActive == false) {
 		notificationActive = true;
 
 		var notificationBox = document.getElementById("notificationBox");
 		notificationBox.style.opacity = "1";
 		notificationBox.style.bottom = "25px";
+
+		var notificationMessage = document.getElementById("notificationMessage");
+		notificationMessage.innerText = message;
 
 		var notificationTimer = document.getElementById("notificationTimer");
 		notificationTimer.style.transition = "all 3s linear";
@@ -45,8 +48,49 @@ function notify() {
 }
 
 function login() {
-	var usernameInput = document.getElementById("credInput");
-	var passwordInput = document.getElementById("credInput2");
+	var usernameInput = document.getElementById("credUsername");
+	var passwordInput = document.getElementById("credPassword");
 
-	notify();
+	if (usernameInput.value == "" || passwordInput.value == "") {
+		notify("Some fields are empty!");
+	}
+	else
+	{
+		notify("User not found!");
+	}
+
+	// php database check
+}
+
+function openFiles(control) {
+	let input = document.createElement("input");
+	input.type = "File";
+	
+	input.onchange = function(e) {
+		let files = Array.from(input.files);
+		control.childNodes[1].innerText = files[0].name;
+	};
+
+	input.click();
+}
+
+function signUp() {
+	var pictureInput = document.getElementById("credPicture");
+	var emailInput = document.getElementById("credEmail");
+	var usernameInput = document.getElementById("credUsername");
+	var passwordInput = document.getElementById("credPassword");
+
+	if (usernameInput.value == "" || passwordInput.value == "" || emailInput.value == "" || pictureInput.innerText == "Picture") {
+		notify("Some fields are empty!");
+	}
+	else
+	{
+		notify("Created account!");
+	}
+
+	// php database check + add 
+}
+
+window.onload = function() {
+	document.body.style.opacity = "1";
 }
