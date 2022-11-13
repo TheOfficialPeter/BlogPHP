@@ -60,7 +60,7 @@ function login() {
 			url: "../index.php",
 			type: "post",
 			dataType: "json",
-			data: {username: usernameInput.value, password: passwordInput.value},
+			data: {loginUsername: usernameInput.value, loginPassword: passwordInput.value},
 			success: function(result) {
 				if (result == 0) {
 					notify("User does not exist!");

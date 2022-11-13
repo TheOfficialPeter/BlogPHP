@@ -14,7 +14,7 @@
 	</div>
 	<div id="right">
 		<div onclick="openFiles(this)" id="pictureBox">
-			<h4>Picture</h4>
+			<h4 id="credPicture">Picture</h4>
 		</div>
 		<div onclick="editInput(this)" id="emailBox">
 			<h4>Email</h4>
@@ -27,6 +27,10 @@
 		<div onclick="editInput(this)" id="passwordBox">
 			<h4>Password</h4>
 			<input tabindex="-1" type="password" id="credPassword"></input>
+		</div>
+		<div onclick="editInput(this)" id="phoneBox">
+			<h4>Phone</h4>
+			<input tabindex="-1" type="text" id="credPhone"></input>
 		</div>
 		<div onclick="signUp()" id="loginBox">
 			<h5>Sign Up</h5>
