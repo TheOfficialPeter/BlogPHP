@@ -1,44 +1,78 @@
 body {
-	opacity: 0;
 	transition: all 1s;
+	opacity: 0;
 	margin: 0;
 }
 
 h1 {
-	width: auto;
+	position: absolute;
+	color: white;
+	width: 361px;
 	text-align: center;
 	font-family: 'Fanwood Text';
-	margin-top: 50px;
+	top: calc(50% - 110px/2 - 50px);
+	margin-top: 0;
+	left: calc(50% - 361px/2);
 	margin-bottom: 0;
 	font-weight: 400;
 	font-size: 100px;
 	height: 110px;
 }
 
+#left {
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 50%;
+	margin: 0;
+	background-color: black;
+}
+
+#right {
+	position: fixed;
+	right: 0;
+	left: 50%;
+	bottom: 0;
+	top: 0;
+	margin: 0;
+}
+
 h2 {
-	width: auto;
+	position: absolute;
+	color: white;
+	width: 300px;
 	text-align: center;
 	font-family: 'Roboto';
+	top: calc(50% - 30px/2 + 25px);
+	height: 30px;
+	left: calc(50% - 300px/2);
 	font-weight: 300;
 	font-size: 25px;
 	margin-top: 0;
-	color: rgba(0,0,0,.4);
+	color: rgba(255,255,255,.4);
 }
 
-a {
-	text-decoration: none;
-}
-
-#redBubble1 {
+#pictureBox {
+	cursor: pointer;
+	width: 370px;
 	position: absolute;
-	right: 0;
-	top: 0;
+	top: 100px;
+	left: calc(50% - 370px/2);
+	outline: 2px solid black;
+	height: 72px;
+	border-radius: 20px;
 }
 
-#redBubble2 {
+#emailBox {
+	cursor: pointer;
+	width: 370px;
 	position: absolute;
-	left: 0;
-	bottom: 0;
+	top: 200px;
+	left: calc(50% - 370px/2);
+	outline: 2px solid black;
+	height: 72px;
+	border-radius: 20px;
 }
 
 #usernameBox {
@@ -73,6 +107,23 @@ a {
 	top: 530px;
 	border-radius: 20px;
 	left: calc(50% - 254px/2);
+}
+
+#credEmail {
+	text-align: center;
+	border: none;
+	outline: none;
+	position: absolute;
+	left: 20px;
+	right: 20px;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	font-size: 20px;
+	font-weight: 300;
+	font-family: 'Roboto';
+	background-color: transparent;
+	color: rgba(0,0,0,.5);
 }
 
 #credUsername {
@@ -115,20 +166,30 @@ a {
 	height: 50px;
 	width: 300px;
 	position: absolute;
-	right: 57px;
+	left: 57px;
 	bottom: -25px;
-	background-color: black;
+	background-color: white;
 	box-shadow: 0px 4px 50px 10px rgba(0,0,0,.5);
 }
 
 #notificationMessage {
 	position: absolute;
 	font-family: 'Montserrat';
-	color: white;
+	color: black;
 	font-size: 20px;
 	text-align: center;
 	padding-top: 10px;
 	width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+#redBubble1 {
+	position: absolute;
+	right: 0;
+	top: 0;
 }
 
 #notificationTimer {
