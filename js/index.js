@@ -56,7 +56,21 @@ function login() {
 	}
 	else
 	{
-		notify("User not found!");
+		$.ajax({
+			url: "../index.php",
+			type: "post",
+			dataType: "json",
+			data: {loginUsername: usernameInput.value, loginPassword: passwordInput.value},
+			success: function(result) {
+				if (result == 0) {
+					notify("User does not exist!");
+				}
+				else
+				{
+					notify("User found!");
+				}
+			}
+		});
 	}
 
 	// php database check

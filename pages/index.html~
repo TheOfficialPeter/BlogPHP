@@ -5,6 +5,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fanwood+Text&family=Montserrat&family=Roboto:wght@300&display=swap" rel="stylesheet">
 <link href="../css/index.css" rel="stylesheet"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
 <body style="overflow: hidden">
 	<script src="../js/index.js"></script>
 
@@ -15,11 +17,11 @@
 	<h2>Log in to continue</h2>
 	<div onclick="editInput(this)" id="usernameBox">
 		<h4>Username</h4>
-		<input tabindex="-1" type="text" id="credInput"></input>
+		<input tabindex="-1" type="text" id="credUsername"></input>
 	</div>
 	<div onclick="editInput(this)" id="passwordBox">
 		<h4>Password</h4>
-		<input tabindex="-1" type="password" id="credInput2"></input>
+		<input tabindex="-1" type="password" id="credPassword"></input>
 	</div>
 	<div onclick="login()" id="loginBox">
 		<h5>Login</h5>
