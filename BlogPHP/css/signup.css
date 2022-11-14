@@ -1,0 +1,322 @@
+body {
+	transition: all 1s;
+	opacity: 0;
+	margin: 0;
+}
+
+h1 {
+	position: absolute;
+	color: white;
+	width: 361px;
+	text-align: center;
+	font-family: 'Fanwood Text';
+	top: calc(50% - 110px/2 - 50px);
+	margin-top: 0;
+	left: calc(50% - 361px/2);
+	margin-bottom: 0;
+	font-weight: 400;
+	font-size: 100px;
+	height: 110px;
+}
+
+#left {
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 50%;
+	margin: 0;
+	background-color: black;
+}
+
+#right {
+	position: fixed;
+	right: 0;
+	left: 50%;
+	bottom: 0;
+	top: 0;
+	margin: 0;
+}
+
+h2 {
+	position: absolute;
+	color: white;
+	width: 300px;
+	text-align: center;
+	font-family: 'Roboto';
+	top: calc(50% - 30px/2 + 25px);
+	height: 30px;
+	left: calc(50% - 300px/2);
+	font-weight: 300;
+	font-size: 25px;
+	margin-top: 0;
+	color: rgba(255,255,255,.4);
+}
+
+#pictureBox {
+	cursor: pointer;
+	width: 370px;
+	position: absolute;
+	top: 50px;
+	left: calc(50% - 370px/2);
+	outline: 2px solid black;
+	height: 62px;
+	border-radius: 20px;
+}
+
+#emailBox {
+	cursor: pointer;
+	width: 370px;
+	position: absolute;
+	top: 150px;
+	left: calc(50% - 370px/2);
+	outline: 2px solid black;
+	height: 62px;
+	border-radius: 20px;
+}
+
+#nameBox {
+	cursor: pointer;
+	width: 175px;
+	position: absolute;
+	top: 250px;
+	left: calc(50% - 175px/2 - 98px);
+	outline: 2px solid black;
+	height: 62px;
+	border-radius: 20px;
+}
+
+#surnameBox {
+	cursor: pointer;
+	width: 175px;
+	position: absolute;
+	top: 250px;
+	right: calc(50% - 175px/2 - 98px);
+	outline: 2px solid black;
+	height: 62px;
+	border-radius: 20px;
+}
+
+#dateOfBirthBox {
+	cursor: pointer;
+	width: 370px;
+	position: absolute;
+	top: 350px;
+	left: calc(50% - 370px/2);
+	outline: 2px solid black;
+	height: 62px;
+	border-radius: 20px;
+}
+
+#phoneBox {
+	cursor: pointer;
+	width: 370px;
+	position: absolute;
+	top: 450px;
+	left: calc(50% - 370px/2);
+	outline: 2px solid black;
+	height: 62px;
+	border-radius: 20px;
+}
+
+#genderBox {
+	cursor: pointer;
+	width: 370px;
+	position: absolute;
+	top: 550px;
+	left: calc(50% - 370px/2);
+	outline: 2px solid black;
+	height: 62px;
+	border-radius: 20px;
+}
+
+#loginBox {
+	cursor: pointer;
+	width: 254px;
+	height: 72px;
+	background-color: black;
+	box-shadow: -10px 10px 50px 0px rgba(0,0,0,.5);
+	position: absolute;
+	top: 650px;
+	border-radius: 20px;
+	left: calc(50% - 254px/2);
+}
+
+#credEmail {
+	text-align: center;
+	border: none;
+	outline: none;
+	position: absolute;
+	left: 20px;
+	right: 20px;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	font-size: 20px;
+	font-weight: 300;
+	font-family: 'Roboto';
+	background-color: transparent;
+	color: rgba(0,0,0,.5);
+}
+
+#credName {
+	text-align: center;
+	border: none;
+	outline: none;
+	position: absolute;
+	left: 20px;
+	right: 20px;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	font-size: 20px;
+	font-weight: 300;
+	font-family: 'Roboto';
+	background-color: transparent;
+	color: rgba(0,0,0,.5);
+}
+
+#credSurname {
+	text-align: center;
+	border: none;
+	outline: none;
+	position: absolute;
+	left: 20px;
+	right: 20px;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	font-size: 20px;
+	font-weight: 300;
+	font-family: 'Roboto';
+	background-color: transparent;
+	color: rgba(0,0,0,.5);
+}
+
+#credDateOfBirth {
+	text-align: center;
+	border: none;
+	outline: none;
+	position: absolute;
+	left: 20px;
+	right: 20px;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	font-size: 20px;
+	font-weight: 300;
+	font-family: 'Roboto';
+	background-color: transparent;
+	color: rgba(0,0,0,.5);
+}
+
+#credPhone {
+	text-align: center;
+	border: none;
+	outline: none;
+	position: absolute;
+	left: 20px;
+	right: 20px;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	font-size: 20px;
+	font-weight: 300;
+	font-family: 'Roboto';
+	background-color: transparent;
+	color: rgba(0,0,0,.5);
+}
+
+#credGender {
+	text-align: center;
+	border: none;
+	outline: none;
+	position: absolute;
+	left: 20px;
+	right: 20px;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	font-size: 20px;
+	font-weight: 300;
+	font-family: 'Roboto';
+	background-color: transparent;
+	color: rgba(0,0,0,.5);
+}
+
+#notificationBox {
+	transition: all 1s;
+	opacity: 0;
+	height: 50px;
+	width: 300px;
+	position: absolute;
+	left: 25px;
+	bottom: -25px;
+	background-color: white;
+	box-shadow: 0px 4px 50px 10px rgba(0,0,0,.5);
+}
+
+#notificationMessage {
+	position: absolute;
+	font-family: 'Montserrat';
+	color: black;
+	font-size: 20px;
+	text-align: center;
+	padding-top: 10px;
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+#redBubble1 {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+#notificationTimer {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 5px;
+	background: #FF4545;
+}
+
+h3 {
+	cursor: pointer;
+	text-align: center;
+	position: absolute;
+	top: 705px;
+	width: 80px;
+	height: 29px;
+	left: calc(50% - 80px/2);
+	text-decoration: underline;
+	font-size: 25px;
+	font-family: 'Roboto';
+	font-weight: 300;
+	color: rgba(0,0,0,.5);
+}
+
+h4 {
+	text-align: center;
+	font-family: 'Roboto';
+	font-size: 20px;
+	margin: 0;
+	line-height: 3em;
+	color: rgba(0,0,0,.5);
+	font-weight: 300;
+}
+
+h5 {
+	text-align: center;
+	color: white;
+	font-size: 25px;
+	font-family: 'Roboto';
+	font-weight: 600;
+	height: 29px;
+	margin-top: 21px;
+	letter-spacing: 0.1em;
+}

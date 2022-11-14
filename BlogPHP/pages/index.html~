@@ -1,0 +1,35 @@
+<html>
+<head>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fanwood+Text&family=Montserrat&family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link href="../css/index.css" rel="stylesheet"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<body style="overflow: hidden">
+	<script src="../js/index.js"></script>
+
+	<img id="redBubble1" src="../assets/redBubble1.svg"></img>
+	<img id="redBubble2" src="../assets/redBubble2.svg"></img>
+
+	<h1>Welcome</h1>
+	<h2>Log in to continue</h2>
+	<div onclick="editInput(this)" id="usernameBox">
+		<h4>Email</h4>
+		<input tabindex="-1" type="text" id="credUsername"></input>
+	</div>
+	<div onclick="editInput(this)" id="passwordBox">
+		<h4>Password</h4>
+		<input tabindex="-1" type="password" id="credPassword"></input>
+	</div>
+	<div onclick="login()" id="loginBox">
+		<h5>Login</h5>
+	</div>
+	<a href="signup.html"><h3>sign up</h3></a>
+	<div onclick="notify(this)" id="notificationBox">
+		<div id="notificationMessage">User does not exist!</div>
+		<div id="notificationTimer"></div>
+	</div>
+</body>
+</html>
