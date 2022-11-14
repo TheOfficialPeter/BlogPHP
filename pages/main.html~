@@ -3,17 +3,19 @@
 </head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fanwood+Text&family=Montserrat&family=Roboto:wght@300&display=swap" rel="stylesheet">
-<link href="../css/main.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fanwood+Text&family=Montserrat&family=Open+Sans:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet"><link href="../css/main.css" rel="stylesheet"/>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
+<script src="../js/main.js"></script>
 <body>
 	<h1 id="title">Welcome, NAME</h1>
 	<div id="nav">
-		<h2 id="navItem">Logoff</h2>
-		<h2 id="navItem">My Account</h2>
-		<h2 id="navItem">View Blogs</h2>
+		<h2 class="navItem">Logoff</h2>
+		<h2 class="navItem">My Account</h2>
+		<h2 class="navItem">View Blogs</h2>
 	</div>
 	<h1 id="pageTitle">Blogs</h1>
+	<div id="underline"></div>
+	<div id="blogList"></div>
+	<img src="../assets/redBubble3.svg" />
 </body>
 </html>

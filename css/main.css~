@@ -4,7 +4,8 @@
 	margin-top: 60px;
 }
 
-#navItem {
+.navItem {
+	z-index: 5;
 	float: right;
 	margin-top: 0;
 	font-family: 'Roboto';
@@ -31,9 +32,19 @@
 #pageTitle {
 	font-family: 'Open Sans';
 	font-size: 50px;
+	font-weight: 300;
 	color: black;
 	position: absolute;
 	width: 122px;
 	left: calc(50% - 122px/2);
 	top: 150px;
+}
+
+#underline {
+	height: 2px;
+	width: 50px;
+	position: absolute;
+	left: calc(50% - 50px/2);
+	top: 260px;
+	background: rgba(0,0,0,.25);
 }
