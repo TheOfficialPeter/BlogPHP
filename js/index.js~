@@ -104,7 +104,7 @@ function signUp() {
 			url: "../index.php",
 			type: "post",
 			dataType: "json",
-			data: {signupEmail: emailInput.value, signupUsername: usernameInput.value, signupPassword: passwordInput.value, signupPhone: phoneInput.value, signupPicture: pictureInput.value, loginUsername: "", loginPassword: ""},
+			data: {signupEmail: emailInput.value, signupUsername: usernameInput.value, signupPassword: passwordInput.value, signupPhone: phoneInput.value, signupPicture: pictureInput.innerText},
 			success: function(result) {
 				if (result == 1) {
 					notify("Account created!");

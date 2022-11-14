@@ -15,12 +15,7 @@
 		
 		$conn = new mysqli("localhost", "admin", "admin", "Users");
 
-		$sqlCommand = "CREATE TABLE userInformation(email varchar(255), username varchar(255), password varchar(255), phone varchar(255), picture varchar(255))";
-		callSQL($conn, $sqlCommand);
-	}	
-
-	function addUser($conn, $email, $username, $password, $phone, $picture) {
-		$sqlCommand = "INSERT INTO userInformation(email, username, password, phone, picture) VALUES('$email', '$username', '$password', '$phone', '$picture')";
+		$sqlCommand = "CREATE TABLE userInformation(email varchar(255), username varchar(255), password_ varchar(255), phone varchar(255), picture varchar(255))";
 		callSQL($conn, $sqlCommand);
 	}	
 		
@@ -28,29 +23,45 @@
 		$sqlCommand = "USE Users";
 		callSQL($conn, $sqlCommand);
 		
-		$sqlCommand = "SELECT * FROM userInformation WHERE username='$username' AND password='$password'";
+		$sqlCommand = "SELECT * FROM userInformation WHERE username='$username' AND password_='$password'";
 		if ($conn->query($sqlCommand)->num_rows > 0) {
 			//echo json_encode(array('code'=>'1'));
 			ob_clean();
-			echo "1";
+			return 1;
 		}
 		else
 		{
 			ob_clean();
-			echo "0";
+			return 0;
+			//echo json_encode(array('code'=>'0'));
+		}
+	}
+
+	function validateUser2($conn, $email) {
+		$sqlCommand = "USE Users";
+		callSQL($conn, $sqlCommand);
+		
+		$sqlCommand = "SELECT * FROM userInformation WHERE email='$email'";
+		if ($conn->query($sqlCommand)->num_rows > 0) {
+			//echo json_encode(array('code'=>'1'));
+			ob_clean();
+			return 1;
+		}
+		else
+		{
+			ob_clean();
+			return 0;
 			//echo json_encode(array('code'=>'0'));
 		}
 	}
 
 	//createDB($conn);
 	
-	if (isset($_POST['loginUsername']) and isset($_POST['loginPassword'])) {
-		validateUser($conn, $_POST['loginUsername'], $_POST['loginPassword']);
-	}
-
-	if (isset($_POST['signupEmail']) and isset($_POST['signupUsername']) and isset($_POST['signupPassword']) and isset($_POST['signupPhone']) and isset($_POST['signupPicture'])) {
-		if (validateUser($conn, $_POST['signupUsername'], $_POST['signupPassword']) == "0") {
-			addUser($conn, $_POST['singupEmail'], $_POST['signupUsername'], $_POST['signupPassword'], $_POST['signupPhone'], $_POST['signupPicture']);
+	$loginUsername = $_POST['loginUsername'];
+	$loginPassword = $_POST['loginPassword'];
+	
+	if (isset($loginUsername) and isset($loginPassword)) {
+		if (validateUser($conn, $loginUsername, $loginPassword) == 1) {
 			ob_clean();
 			echo "1";
 		}
@@ -59,5 +70,5 @@
 			ob_clean();
 			echo "0";
 		}
-	}
+	}	
 ?>

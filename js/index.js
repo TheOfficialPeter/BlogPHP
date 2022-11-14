@@ -101,10 +101,10 @@ function signUp() {
 	else
 	{
 		$.ajax({
-			url: "../index.php",
+			url: "../signup.php",
 			type: "post",
 			dataType: "json",
-			data: {signupEmail: emailInput.value, signupUsername: usernameInput.value, signupPassword: passwordInput.value, signupPhone: phoneInput.value, signupPicture: pictureInput.value},
+			data: {signupEmail: emailInput.value, signupUsername: usernameInput.value, signupPassword: passwordInput.value, signupPhone: phoneInput.value, signupPicture: pictureInput.innerText},
 			success: function(result) {
 				if (result == 1) {
 					notify("Account created!");
