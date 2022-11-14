@@ -9,11 +9,11 @@
 		$conn->query($sqlCommand);
 	}
 
-	function addUser($conn, $email, $username, $password, $phone, $picture) {
+	function addUser($conn, $email, $name, $surname, $dateOfBirth, $gender, $password, $phone, $picture) {
 		$sqlCommand = "USE Users";
 		callSQL($conn, $sqlCommand);
 
-		$sqlCommand = "INSERT INTO userInformation VALUES('$email', '$username', '$password', '$phone', '$picture')";
+		$sqlCommand = "INSERT INTO userInformation VALUES('$email', '$name', '$surname', '$dateOfBirth', '$gender', '$password', '$phone', '$picture')";
 		callSQL($conn, $sqlCommand);
 	}
 
@@ -36,15 +36,22 @@
 	}
 
 	$signupEmail = $_POST['signupEmail'];
-	$signupUsername = $_POST['signupUsername'];
-	$signupPassword = $_POST['signupUsername'];
+	$signupName = $_POST['signupName'];
+	$signupSurname = $_POST['signupSurname'];
+	$signupDateOfBirth = $_POST['signupDateOfBirth'];
+	$signupGender = $_POST['signupGender'];
 	$signupPhone = $_POST['signupPhone'];
 	$signupPicture = $_POST['signupPicture'];
+	$signupPassword = "123";
 
-	if (isset($signupEmail) and isset($signupUsername) and isset($signupPassword) and isset($signupPhone) and isset($signupPicture))
+	mail("dv.2022.c4h2t2@vossie.net", "Account token", "Your password token for your account is: " . $signupPassword);
+
+	if (isset($signupEmail) and isset($signupName) and isset($signupSurname) and isset($signupDateOfBirth) and isset($signupGender) and isset($signupPassword) and isset($signupPhone) and isset($signupPicture))
 	{
 		if (validateUser2($conn, $signupEmail) == 0) {
-			addUser($conn, $signupEmail, $signupUsername, $signupPassword, $signupPhone, $signupPicture);
+			mail($signupEmail, "Account token", "Your password token for the account: " . $signupEmail . " is " . $signupPassword);
+
+			addUser($conn, $signupEmail, $signupName, $signupSurname, $signupDateOfBirth, $signupGender, $signupPassword, $signupPhone, $signupPicture);
 			ob_clean();
 			echo "1";
 		}

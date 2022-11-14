@@ -4,6 +4,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fanwood+Text&family=Montserrat&family=Roboto:wght@300&display=swap" rel="stylesheet">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <link href="../css/signup.css" rel="stylesheet"/>
 <body style="overflow: hidden">
 	<script src="../js/index.js"></script>
@@ -20,17 +21,25 @@
 			<h4>Email</h4>
 			<input tabindex="-1" type="text" id="credEmail"></input>
 		</div>
-		<div onclick="editInput(this)" id="usernameBox">
-			<h4>Username</h4>
-			<input tabindex="-1" type="text" id="credUsername"></input>
+		<div onclick="editInput(this)" id="nameBox">
+			<h4>Name</h4>
+			<input tabindex="-1" type="text" id="credName"></input>
 		</div>
-		<div onclick="editInput(this)" id="passwordBox">
-			<h4>Password</h4>
-			<input tabindex="-1" type="password" id="credPassword"></input>
+		<div onclick="editInput(this)" id="surnameBox">
+			<h4>Surname</h4>
+			<input tabindex="-1" type="text" id="credSurname"></input>
+		</div>
+		<div onclick="editInput(this)" id="dateOfBirthBox">
+			<h4>Date Of Birth</h4>
+			<input tabindex="-1" type="text" id="credDateOfBirth"></input>
 		</div>
 		<div onclick="editInput(this)" id="phoneBox">
 			<h4>Phone</h4>
 			<input tabindex="-1" type="text" id="credPhone"></input>
+		</div>
+		<div onclick="editInput(this)" id="genderBox">
+			<h4>Phone</h4>
+			<input tabindex="-1" type="text" id="credGender"></input>
 		</div>
 		<div onclick="signUp()" id="loginBox">
 			<h5>Sign Up</h5>

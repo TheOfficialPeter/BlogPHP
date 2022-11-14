@@ -48,10 +48,10 @@ function notify(message) {
 }
 
 function login() {
-	var usernameInput = document.getElementById("credUsername");
+	var emailInput = document.getElementById("credEmail");
 	var passwordInput = document.getElementById("credPassword");
 
-	if (usernameInput.value == "" || passwordInput.value == "") {
+	if (emailInput.value == "" || passwordInput.value == "") {
 		notify("Some fields are empty!");
 	}
 	else
@@ -60,14 +60,18 @@ function login() {
 			url: "../index.php",
 			type: "post",
 			dataType: "json",
-			data: {loginUsername: usernameInput.value, loginPassword: passwordInput.value},
+			data: {loginEmail: emailInput.value, loginPassword: passwordInput.value},
 			success: function(result) {
 				if (result == 0) {
 					notify("User does not exist!");
 				}
 				else
 				{
-					notify("User found!");
+					notify("Welcome back!");
+					
+					setTimeout(function() {
+						location.href = "./main.html";
+					},3000);
 				}
 			}
 		});
@@ -92,11 +96,14 @@ function signUp() {
 	var phoneInput = document.getElementById("credPhone");
 	var pictureInput = document.getElementById("credPicture");
 	var emailInput = document.getElementById("credEmail");
-	var usernameInput = document.getElementById("credUsername");
-	var passwordInput = document.getElementById("credPassword");
+	var nameInput = document.getElementById("credName");
+	var surnameInput = document.getElementById("credSurname");
+	var genderInput = document.getElementById("credGender");
+	var dateOfBirthInput = document.getElementById("credDateOfBirth");
 
-	if (usernameInput.value == "" || passwordInput.value == "" || emailInput.value == "" || phoneInput.value == "" || pictureInput.innerText == "Picture") {
+	if (emailInput.value == "" || nameInput.value == "" || surnameInput.value == "" || dateOfBirthInput.value == "" || genderInput.value =="" || phoneInput.value == "" || pictureInput.innerText == "Picture") {
 		notify("Some fields are empty!");
+		notificationActive = false;
 	}
 	else
 	{
@@ -104,10 +111,14 @@ function signUp() {
 			url: "../signup.php",
 			type: "post",
 			dataType: "json",
-			data: {signupEmail: emailInput.value, signupUsername: usernameInput.value, signupPassword: passwordInput.value, signupPhone: phoneInput.value, signupPicture: pictureInput.innerText},
+			data: {signupEmail: emailInput.value, signupName: nameInput.value, signupSurname: surnameInput.value, signupDateOfBirth: dateOfBirthInput.value, signupGender: genderInput.value, signupPhone: phoneInput.value, signupPicture: pictureInput.innerText},
 			success: function(result) {
 				if (result == 1) {
 					notify("Account created!");
+					
+					setTimeout(function() {
+						location.href = "../pages/index.html";
+					},3000);
 				}
 				else
 				{

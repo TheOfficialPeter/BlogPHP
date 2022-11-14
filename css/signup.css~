@@ -60,7 +60,7 @@ h2 {
 	top: 50px;
 	left: calc(50% - 370px/2);
 	outline: 2px solid black;
-	height: 72px;
+	height: 62px;
 	border-radius: 20px;
 }
 
@@ -71,29 +71,40 @@ h2 {
 	top: 150px;
 	left: calc(50% - 370px/2);
 	outline: 2px solid black;
-	height: 72px;
+	height: 62px;
 	border-radius: 20px;
 }
 
-#usernameBox {
+#nameBox {
 	cursor: pointer;
-	width: 370px;
+	width: 175px;
 	position: absolute;
 	top: 250px;
-	left: calc(50% - 370px/2);
+	left: calc(50% - 175px/2 - 98px);
 	outline: 2px solid black;
-	height: 72px;
+	height: 62px;
 	border-radius: 20px;
 }
 
-#passwordBox {
+#surnameBox {
+	cursor: pointer;
+	width: 175px;
+	position: absolute;
+	top: 250px;
+	right: calc(50% - 175px/2 - 98px);
+	outline: 2px solid black;
+	height: 62px;
+	border-radius: 20px;
+}
+
+#dateOfBirthBox {
 	cursor: pointer;
 	width: 370px;
 	position: absolute;
 	top: 350px;
 	left: calc(50% - 370px/2);
 	outline: 2px solid black;
-	height: 72px;
+	height: 62px;
 	border-radius: 20px;
 }
 
@@ -101,10 +112,21 @@ h2 {
 	cursor: pointer;
 	width: 370px;
 	position: absolute;
-	top: 350px;
+	top: 450px;
 	left: calc(50% - 370px/2);
 	outline: 2px solid black;
-	height: 72px;
+	height: 62px;
+	border-radius: 20px;
+}
+
+#genderBox {
+	cursor: pointer;
+	width: 370px;
+	position: absolute;
+	top: 550px;
+	left: calc(50% - 370px/2);
+	outline: 2px solid black;
+	height: 62px;
 	border-radius: 20px;
 }
 
@@ -115,7 +137,7 @@ h2 {
 	background-color: black;
 	box-shadow: -10px 10px 50px 0px rgba(0,0,0,.5);
 	position: absolute;
-	top: 550px;
+	top: 650px;
 	border-radius: 20px;
 	left: calc(50% - 254px/2);
 }
@@ -137,7 +159,7 @@ h2 {
 	color: rgba(0,0,0,.5);
 }
 
-#credUsername {
+#credName {
 	text-align: center;
 	border: none;
 	outline: none;
@@ -154,7 +176,24 @@ h2 {
 	color: rgba(0,0,0,.5);
 }
 
-#credPassword {
+#credSurname {
+	text-align: center;
+	border: none;
+	outline: none;
+	position: absolute;
+	left: 20px;
+	right: 20px;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	font-size: 20px;
+	font-weight: 300;
+	font-family: 'Roboto';
+	background-color: transparent;
+	color: rgba(0,0,0,.5);
+}
+
+#credDateOfBirth {
 	text-align: center;
 	border: none;
 	outline: none;
@@ -172,6 +211,23 @@ h2 {
 }
 
 #credPhone {
+	text-align: center;
+	border: none;
+	outline: none;
+	position: absolute;
+	left: 20px;
+	right: 20px;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	font-size: 20px;
+	font-weight: 300;
+	font-family: 'Roboto';
+	background-color: transparent;
+	color: rgba(0,0,0,.5);
+}
+
+#credGender {
 	text-align: center;
 	border: none;
 	outline: none;
@@ -233,7 +289,7 @@ h3 {
 	cursor: pointer;
 	text-align: center;
 	position: absolute;
-	top: 610px;
+	top: 710px;
 	width: 80px;
 	height: 29px;
 	left: calc(50% - 80px/2);
@@ -248,6 +304,8 @@ h4 {
 	text-align: center;
 	font-family: 'Roboto';
 	font-size: 20px;
+	margin: 0;
+	line-height: 3em;
 	color: rgba(0,0,0,.5);
 	font-weight: 300;
 }

@@ -41,7 +41,7 @@ a {
 	bottom: 0;
 }
 
-#usernameBox {
+#emailBox {
 	cursor: pointer;
 	width: 370px;
 	position: absolute;
@@ -75,7 +75,7 @@ a {
 	left: calc(50% - 254px/2);
 }
 
-#credUsername {
+#credEmail {
 	text-align: center;
 	border: none;
 	outline: none;
