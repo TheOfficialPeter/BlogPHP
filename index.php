@@ -62,6 +62,7 @@
 	
 	if (isset($loginEmail) and isset($loginPassword)) {
 		if (validateUser($conn, $loginEmail, $loginPassword) == 1) {
+
 			ob_clean();
 			echo "1";
 		}

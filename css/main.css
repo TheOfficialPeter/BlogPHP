@@ -1,7 +1,17 @@
+body {
+	transition: all 1s;
+	opacity: 0;
+}
+
 #nav {
 	margin-right: 350px;
 	float: right;
 	margin-top: 60px;
+}
+
+a {
+	text-decoration: none;
+	font-style: none;
 }
 
 #redBubble3 {
@@ -12,6 +22,8 @@
 }
 
 .navItem {
+	text-decoration: none;
+	font-style: none;
 	z-index: 5;
 	float: right;
 	margin-top: 0;
@@ -54,4 +66,68 @@
 	left: calc(50% - 50px/2);
 	top: 260px;
 	background: rgba(0,0,0,.25);
+}
+
+#cardList {
+	position: absolute;
+	left: 158px;
+	right: 158px;
+	bottom: 0;
+	top: 350px;
+}
+
+.card {
+	cursor: pointer;
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	transition: all .2s linear;
+	z-index: 10;
+	width: 296px;
+	height: 327px;
+	background-color: black;
+}
+
+.cardHead {
+	transition: all .2s;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 50%;
+	background-size: cover;
+}
+
+.cardBody {
+	transition: all .2s;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	right: 0;
+	bottom: 0;
+	background-color: black;
+}
+
+#cardTitle {
+	font-family: 'Fanwood Text';
+	font-size: 30px;
+	font-weight: 400;
+	color: white;
+	position: absolute;
+	left: 10px;
+	top: 5px;
+	right: 0;
+	width: 100%;
+}
+
+#cardDesc {
+	font-family: 'Roboto';
+	font-size: 16px;
+	font-weight: 300;
+	color: rgba(255,255,255,.5);
+	position: absolute;
+	left: 10px;
+	top: 50px;
+	right: 0;
 }

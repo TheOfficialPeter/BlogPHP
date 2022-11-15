@@ -1,0 +1,15 @@
+#goodbye {
+	font-family: 'Open Sans';
+	font-size: 60px;
+	font-weight: 300;
+	color: black;
+	position: absolute;
+	height: 82px;
+	width: 794px;
+	top: calc(50% - 82px/2 - 20px);
+   	left: calc(50% - 794px/2);
+}
+
+#underline {
+	top: calc(50% - 2px/2 + 75px);
+}

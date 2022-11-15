@@ -1,0 +1,24 @@
+<html>
+<head>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fanwood+Text&family=Montserrat&family=Open+Sans:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link href="../css/main.css" rel="stylesheet"/>
+<link href="../css/viewBlog.css" rel="stylesheet"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="../js/main.js"></script>
+<body>
+	<a href="./main.html"><h1 id="title">Welcome, NAME</h1></a>
+	<div id="nav">
+		<a href="./logoff.html"><h2 class="navItem">Logoff</h2></a>
+		<h2 class="navItem">My Account</h2>
+		<h2 class="navItem">View Blogs</h2>
+	</div>
+	<h1 id="pageTitle">Blog name</h1>
+	<div id="underline"></div>
+	<div id="blogText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus urna neque viverra justo nec ultrices dui sapien. Tellus at urna condimentum mattis pellentesque id nibh tortor. Maecenas accumsan lacus vel facilisis volutpat. Risus nec feugiat in fermentum posuere urna nec tincidunt. Neque aliquam vestibulum morbi blandit cursus risus at ultrices mi. Maecenas volutpat blandit aliquam etiam erat velit scelerisque in dictum. Semper auctor neque vitae tempus. Ut tristique et egestas quis ipsum suspendisse. Enim nulla aliquet porttitor lacus luctus accumsan tortor posuere. Pulvinar mattis nunc sed blandit libero volutpat sed cras ornare. Dui vivamus arcu felis bibendum ut. Elementum pulvinar etiam non quam. Dictum non consectetur a erat nam. In cursus turpis massa tincidunt dui ut ornare. Amet commodo nulla facilisi nullam vehicula ipsum a. Eu sem integer vitae justo eget magna fermentum. Orci dapibus ultrices in iaculis nunc ed augue.
+</div>
+	<img id="redBubble3" src="../assets/redBubble3.svg" />
+</body>
+</html>

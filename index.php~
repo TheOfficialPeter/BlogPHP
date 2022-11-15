@@ -24,7 +24,7 @@
 		callSQL($conn, $sqlCommand);
 		
 		$sqlCommand = "SELECT * FROM userInformation WHERE BINARY email='$email' AND password_='$password'";
-		if ($conn->query($sqlCommand)->num_rows > 0) {
+		if ($conn->query($sqlCommand)->num_rows == 1) {
 			//echo json_encode(array('code'=>'1'));
 			ob_clean();
 			return 1;
@@ -62,6 +62,8 @@
 	
 	if (isset($loginEmail) and isset($loginPassword)) {
 		if (validateUser($conn, $loginEmail, $loginPassword) == 1) {
+			setcookie('name', $loginEmail);
+
 			ob_clean();
 			echo "1";
 		}

@@ -5,26 +5,18 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fanwood+Text&family=Montserrat&family=Open+Sans:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
 <link href="../css/main.css" rel="stylesheet"/>
+<link href="../css/logoff.css" rel="stylesheet"/>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="../js/main.js"></script>
 <body>
-	<h1 id="title">Welcome, NAME</h1>
+	<a href="./main.html"><h1 id="title">Welcome, NAME</h1></a>
 	<div id="nav">
-		<a href="./logoff.html" class="navItem">Logoff</a>
-		<a class="navItem">My Account</a>
-		<a class="navItem">View Blogs</a>
+		<h2 class="navItem">Logoff</h2>
+		<h2 class="navItem">My Account</h2>
+		<h2 class="navItem">View Blogs</h2>
 	</div>
-	<h1 id="pageTitle">Blogs</h1>
 	<div id="underline"></div>
-	<div id="cardList">
-		<div class="card">
-			<div class="cardHead"></div>
-			<div class="cardBody">
-				<h1 id="cardTitle">Title</h1>
-				<h2 id="cardDesc">Loren Ipsun</h2>
-			</div>
-		</div>
-	</div>
+	<h1 id="goodbye">Hope to see you again soon...</h1>
 	<img id="redBubble3" src="../assets/redBubble3.svg" />
 </body>
 </html>

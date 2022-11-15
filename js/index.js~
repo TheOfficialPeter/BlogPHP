@@ -70,7 +70,17 @@ function login() {
 					notify("Welcome back!");
 					
 					setTimeout(function() {
-						location.href = "./main.html";
+						$.ajax({
+							url: "../getName.php",
+							type: "post",
+							dataType: "json",
+							data: {email: emailInput.value},
+							success: function(res) {
+
+
+								location.href = "./main.html";
+							}
+						});
 					},3000);
 				}
 			}

@@ -1,0 +1,23 @@
+a {
+	text-decoration: none;
+	font-style: none;
+}
+
+#pageTitle {
+	width: 500px;
+	text-align: center;
+	left: calc(50% - 500px/2);
+}
+
+#blogText {
+	position: absolute;
+	left: 221px;
+	right: 221px;
+	top: 320px;
+	bottom: 0;
+	font-family: 'Roboto';
+	font-size: 25px;
+	font-weight: 300;
+	color: rgba(0,0,0,.75);
+	z-index: 10;
+}
