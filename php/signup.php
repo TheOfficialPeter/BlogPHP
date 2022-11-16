@@ -14,7 +14,7 @@
 		callSQL($conn, $sqlCommand);
 	}
 
-	function validateUser2($conn, $email) {
+	function validateUser($conn, $email) {
 		$sqlCommand = "SELECT * FROM userInformation WHERE email='$email'";
 		if ($conn->query($sqlCommand)->num_rows > 0) {
 			return 1;
@@ -36,7 +36,7 @@
 
 	if (isset($signupEmail) and isset($signupName) and isset($signupSurname) and isset($signupDateOfBirth) and isset($signupGender) and isset($signupPassword) and isset($signupPhone) and isset($signupPicture))
 	{
-		if (validateUser2($conn, $signupEmail) == 0) {
+		if (validateUser($conn, $signupEmail) == 0) {
 			addUser($conn, $signupEmail, $signupName, $signupSurname, $signupDateOfBirth, $signupGender, $signupPassword, $signupPhone, $signupPicture);
 			ob_clean();
 			echo "1";

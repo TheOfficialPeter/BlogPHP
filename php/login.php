@@ -11,7 +11,7 @@
 
 	function validateUser($conn, $email, $password) {
 		$sqlCommand = "SELECT * FROM userInformation WHERE BINARY email='$email' AND password_='$password'";
-		if ($conn->query($sqlCommand)->num_rows == 1) {
+		if ($conn->query($sqlCommand)->num_rows > 0) {
 			return 1;
 		}
 		else
@@ -21,7 +21,7 @@
 	}
 
 	function validateUser2($conn, $email) {
-		$sqlCommand = "SELECT * FROM userInformation BINARY WHERE email='$email'";
+		$sqlCommand = "SELECT * FROM userInformation BINARY WHERE BINARY email='$email'";
 		if ($conn->query($sqlCommand)->num_rows > 0) {
 			return 1;
 		}

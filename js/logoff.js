@@ -3,7 +3,8 @@ window.onload = function() {
 	document.body.style.opacity = "1";
 	
 	setTimeout(function() {
-		window.cookies = "";
+		document.cookie = JSON.stringify({name: JSON.parse(document.cookie).name, email: JSON.parse(document.cookie).email, expires: 0});
+
 		location.href = "../pages/signup.html";
 	},5000);
 }
