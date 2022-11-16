@@ -7,13 +7,12 @@
 <link href="../css/main.css" rel="stylesheet"/>
 <link href="../css/viewBlog.css" rel="stylesheet"/>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="../js/main.js"></script>
 <body>
 	<a href="./main.html"><h1 id="title">Welcome, NAME</h1></a>
 	<div id="nav">
 		<a href="./logoff.html"><h2 class="navItem">Logoff</h2></a>
 		<h2 class="navItem">My Account</h2>
-		<h2 class="navItem">View Blogs</h2>
+		<a href="./main.html" ><h2 class="navItem">View Blogs</h2></a>
 	</div>
 	<h1 id="pageTitle">Blog name</h1>
 	<div id="underline"></div>

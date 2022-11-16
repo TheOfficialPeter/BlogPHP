@@ -7,7 +7,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <link href="../css/signup.css" rel="stylesheet"/>
 <body style="overflow: hidden">
-	<script src="../js/index.js"></script>
+	<script src="../js/login.js"></script>
 	<img id="redBubble1" src="../assets/redBubble1.svg"></img>
 	<div id="left">
 		<h1>Welcome</h1>
@@ -38,7 +38,7 @@
 			<input tabindex="-1" type="text" id="credPhone"></input>
 		</div>
 		<div onclick="editInput(this)" id="genderBox">
-			<h4>Phone</h4>
+			<h4>Gender</h4>
 			<input tabindex="-1" type="text" id="credGender"></input>
 		</div>
 		<div onclick="signUp()" id="loginBox">

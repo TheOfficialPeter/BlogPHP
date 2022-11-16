@@ -1,13 +1,26 @@
 window.onload = function() {
-	$.ajax({
-		url: "../getCookie.php",
-		type: "post",
-		dataType: "json",
-		data: {uhh: 'uhh'},
-		success: function(res) {
-			document.getElementById("title").innerText = "Welcome, " + res.toString();
-		}
-	});
+	try {
+		var emailCookie = JSON.parse(document.cookie).email;
+		
+		$.ajax({
+			url: "../PHP/main.php",
+			type: "post",
+			dataType: "json",
+			data: {emai: emailCookie},
+			success: function(result) {
+				if (result == 0) {
+					location.href = "../pages/login.html";
+				}
+			}
+		});
+	}
+	catch {
+		location.href = "../pages/login.html";
+	}
+
+	
+
+	document.getElementById("title").innerText = "Welcome, " + JSON.parse(document.cookie).name;
 
 	document.body.style.opacity = "1";
 	var navItems = document.body.getElementsByClassName("navItem");
