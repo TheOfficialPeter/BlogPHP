@@ -76,7 +76,8 @@ function login() {
 							dataType: "json",
 							data: {email: emailInput.value},
 							success: function(res) {
-								document.cookie = JSON.stringify({name: res.username, email: res.email});
+								window.localStorage.setItem("name", res.username);
+								window.localStorage.setItem("email", res.email);
 								location.href = "./main.html";
 							}
 						});
@@ -139,7 +140,7 @@ function signUp() {
 }
 
 window.onload = function() {
-	if (JSON.parse(document.cookie).name != null) {
+	if (window.localStorage.getItem("email") != null) {
 		location.href = "../pages/main.html";
 	}
 

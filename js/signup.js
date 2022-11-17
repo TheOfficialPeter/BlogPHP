@@ -1,5 +1,6 @@
 window.onload = function() {
-	if (JSON.parse(document.cookie).name != null) {
+	if (window.localStorage.getItem('email') != null) {
 		location.href = "../pages/main.html";
 	}
+	document.body.style.opacity = "1";
 }
