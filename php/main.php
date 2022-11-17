@@ -4,7 +4,7 @@
 	if (isset($email)) {
 		$conn = new mysqli("localhost", "admin", "admin", "Users");
 		
-		$sqlCommand = "SELECT * FROM userInformation BINARY WHERE email='$email'";
+		$sqlCommand = "SELECT * FROM userInformation WHERE BINARY email='$email'";
 		if ($conn->query($sqlCommand)->num_rows > 0) {
 			echo "1";
 		}

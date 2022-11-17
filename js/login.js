@@ -126,6 +126,8 @@ function signUp() {
 				if (result == 1) {
 					notify("Account created!");
 					
+					window.localStorage.setItem("picture", pictureInput.innerText);
+
 					setTimeout(function() {
 						location.href = "../pages/login.html";
 					},3000);

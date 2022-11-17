@@ -1,0 +1,134 @@
+body {
+	transition: all 1s;
+	opacity: 0;
+}
+
+#nav {
+	margin-right: 350px;
+	float: right;
+	margin-top: 60px;
+}
+
+a {
+	text-decoration: none;
+	font-style: none;
+}
+
+#redBubble4 {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+}
+
+.navItem {
+	text-decoration: none;
+	font-style: none;
+	z-index: 5;
+	float: right;
+	margin-top: 0;
+	font-family: 'Roboto';
+	font-weight: 300;
+	font-size: 20px;
+	margin-right: 50px;
+	cursor: pointer;
+	font-weight: 300;
+	color: black;
+}
+
+#title {
+	cursor: pointer;
+	position: absolute;
+	float: left;
+	font-family: 'Fanwood Text';
+	font-size: 40px;
+	color: black;
+	font-weight: 400;
+	left: 75px;
+	top: 30px;
+}
+
+#pageTitle {
+	text-align: center;
+	font-family: 'Open Sans';
+	font-size: 50px;
+	font-weight: 300;
+	color: black;
+	position: absolute;
+	width: 500px;
+	left: calc(50% - 500px/2);
+	top: 150px;
+}
+
+#underline {
+	height: 2px;
+	width: 50px;
+	position: absolute;
+	left: calc(50% - 50px/2);
+	top: 260px;
+	background: rgba(0,0,0,.25);
+}
+
+#input1 {
+	cursor: pointer;
+	z-index: 10;
+	border-radius: 10px;
+	width: 300px;
+	height: 50px;
+	position: absolute;
+	left: calc(50% - 300px/2);
+	top: 325px;
+	outline: 1px solid black;
+}
+
+#input2 {
+	cursor: pointer;
+	z-index: 10;
+	border-radius: 10px;
+	width: 300px;
+	height: 50px;
+	position: absolute;
+	left: calc(50% - 300px/2);
+	top: 390px;
+	outline: 1px solid black;
+}
+
+#input1Lbl {
+	transition: all .2s;
+	text-align: center;
+	color: black;
+	font-size: 20px;
+	font-family: 'Roboto';
+	font-weight: 300;
+}
+
+#input2Lbl {
+	transition: all .2s;
+	text-align: center;
+	color: black;
+	font-size: 20px;
+	font-family: 'Roboto';
+	font-weight: 300;
+}
+
+#submitBtn {
+	cursor: pointer;
+	z-index: 10;
+	border-radius: 10px;
+	width: 150px;
+	height: 50px;
+	position: absolute;
+	left: calc(50% - 150px/2);
+	top: 490px;
+	background: #FF4848;
+	box-shadow: 0px 4px 50px #FF2929;
+}
+
+#submitLbl {
+	text-align: center;
+	color: white;
+	font-size: 20px;
+	font-family: 'Roboto';
+	font-weight: 400;
+	letter-spacing: 0.1em;
+}
