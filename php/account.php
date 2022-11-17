@@ -12,7 +12,7 @@
 				"statusCode" => "1",
 				"username" => $row[1],
 				"email" => $row[0],
-				"number" => $row[6]
+				"number" => $row[3]
 			);
 
 			echo json_encode($return);

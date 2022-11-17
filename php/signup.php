@@ -10,7 +10,7 @@
 	}
 
 	function addUser($conn, $email, $name, $surname, $dateOfBirth, $gender, $password, $phone, $picture) {
-		$sqlCommand = "INSERT INTO userInformation VALUES('$email', '$name', '$surname', '$dateOfBirth', '$gender', '$password', '$phone', '$picture')";
+		$sqlCommand = "INSERT INTO userInformation(email, name, surname, dateOfBirth, gender, password_, phone, picture) VALUES('$email', '$name', '$surname', '$dateOfBirth', '$gender', '$password', '$phone', '$picture')";
 		callSQL($conn, $sqlCommand);
 	}
 
@@ -32,7 +32,11 @@
 	$signupGender = $_POST['signupGender'];
 	$signupPhone = $_POST['signupPhone'];
 	$signupPicture = $_POST['signupPicture'];
-	$signupPassword = "123";
+
+	$randomPass = rand(10000,10000000);
+	settype($randomPass, "string");
+
+	$signupPassword = $randomPass;
 
 	if (isset($signupEmail) and isset($signupName) and isset($signupSurname) and isset($signupDateOfBirth) and isset($signupGender) and isset($signupPassword) and isset($signupPhone) and isset($signupPicture))
 	{

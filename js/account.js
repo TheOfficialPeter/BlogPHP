@@ -13,7 +13,8 @@ window.onload = function() {
 		}
 	});
 	
-	document.getElementById('profilePhoto').backgroundImage = "url('../assets/"+window.localStorage.getItem('picture')+"')";
+	document.getElementById('profilePhoto').style.background = "url('../assets/"+window.localStorage.getItem('picture')+"')";
+	document.getElementById('profilePhoto').style.backgroundSize = "cover";
 	document.getElementById('title').innerText = "Welcome, " + window.localStorage.getItem('name');
 	document.body.style.opacity = "1";
 
