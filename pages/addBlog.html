@@ -1,0 +1,56 @@
+<html>
+<head>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fanwood+Text&family=Montserrat&family=Open+Sans:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link href="../css/addBlog.css" rel="stylesheet"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<body>
+	<a href="./main.html"><h1 id="title">Welcome, NAME</h1></a>
+	<div id="nav">
+		<a href="./logoff.html" class="navItem">Logoff</a>
+		<a href="./account.html" class="navItem">My Account</a>
+		<a href="./main.html" class="navItem">View Blogs</a>
+	</div>
+	<h1 id="pageTitle">Add blog</h1>
+	<div id="underline"></div>
+	<a href="./main.html"><div id="addBtn">+</div></a>
+
+	<div onclick="editInput(this)" id="blogTitle">
+		<h1 id="blogTitleLbl">Blog Title</h1>
+		<input tabindex="-1" id="blogTitleInput"></input>
+	</div>
+
+	<div onclick="editInput(this)" id="blogDescription">
+		<h1 id="blogDescriptionLbl">Blog Description</h1>
+		<input tabindex="-1" id="blogDescriptionInput"></input>
+	</div>
+
+	<div onclick="openFiles(this)" id="blogPicture">
+		<h1 id="blogPictureLbl">Blog Picture</h1>
+	</div>
+
+	<div onclick="editInput(this)" id="blogContent">
+		<h1 id="blogContentLbl">Blog Text</h1>
+		<textarea tabindex="-1" id="blogContentInput"></textarea>
+	</div>
+
+	<div id="submitBtn">
+		<h1 id="submitBtnLbl">SUBMIT</h1>
+	</div>
+
+	<div id="previewBox">
+		<div class="card">
+			<div class="cardHead"></div>
+			<div class="cardBody">
+				<div id="cardTitle">Title</div>
+				<div id="cardDesc">Loren Ipsun</div>
+			</div>
+		</div>
+	</div>
+	
+	<img id="redBubble3" src="../assets/redBubble3.svg" />
+	<script src="../js/addBlog.js"></script>
+</body>
+</html>

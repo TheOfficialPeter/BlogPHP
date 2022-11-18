@@ -71,13 +71,14 @@ function login() {
 					
 					setTimeout(function() {
 						$.ajax({
-							url: "../PHP/getNameAndEmail.php",
+							url: "../PHP/getNameAndEmailAndPicture.php",
 							type: "post",
 							dataType: "json",
 							data: {email: emailInput.value},
 							success: function(res) {
 								window.localStorage.setItem("name", res.username);
 								window.localStorage.setItem("email", res.email);
+								window.localStorage.setItem("picture", res.picture);
 								location.href = "./main.html";
 							}
 						});

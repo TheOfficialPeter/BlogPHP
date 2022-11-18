@@ -1,3 +1,33 @@
+var notificationActive = false;
+
+function notify(message) {
+	if (notificationActive == false) {
+		notificationActive = true;
+
+		var notificationBox = document.getElementById("notificationBox");
+		notificationBox.style.opacity = "1";
+		notificationBox.style.bottom = "25px";
+
+		var notificationMessage = document.getElementById("notificationMessage");
+		notificationMessage.innerText = message;
+
+		var notificationTimer = document.getElementById("notificationTimer");
+		notificationTimer.style.transition = "all 3s linear";
+		notificationTimer.style.marginRight = "100%";
+
+		setTimeout(function() {
+			notificationBox.style.opacity = "0";
+			notificationBox.style.bottom = "-25px";
+
+			setTimeout(function() {
+				notificationTimer.style.transition = "";
+				notificationTimer.style.margin = "0";
+				notificationActive = false;
+			},1000);
+		},3000)
+	}
+}
+
 window.onload = function() {
 	var savedEmail = window.localStorage.getItem('email');
 
@@ -120,12 +150,18 @@ window.onload = function() {
 						dataType: "json",
 						data: {email: savedEmail, name: newInput1.value},
 						success: function(result) {
-							if (result == 0) {
-								
-							}
-							else {
-								newInput1.value = "";
-								newInput2.value = "";
+							if (result == 1) {
+								notify("Changed name!");
+								input1Lbl.innerText = "New " + window.localStorage.getItem('change');
+								input2Lbl.innerText = "Repeat " + window.localStorage.getItem('change');
+								input1Lbl.style.opacity = "1";
+								input2Lbl.style.opacity = "1";
+								newInput1.remove();
+								newInput2.remove();
+
+								setTimeout(function() {
+									location.href = "../pages/account.html";
+								},3000);
 							}
 						}
 					});				
@@ -139,12 +175,18 @@ window.onload = function() {
 						dataType: "json",
 						data: {email: savedEmail, password: newInput1.value},
 						success: function(result) {
-							if (result == 0) {
+							if (result == 1) {
+								notify("Changed password!");
+								input1Lbl.innerText = "New " + window.localStorage.getItem('change');
+								input2Lbl.innerText = "Repeat " + window.localStorage.getItem('change');
+								input1Lbl.style.opacity = "1";
+								input2Lbl.style.opacity = "1";
+								newInput1.remove();
+								newInput2.remove();
 
-							}
-							else {
-								newInput1.value = "";
-								newInput2.value = "";
+								setTimeout(function() {
+									location.href = "../pages/account.html";
+								},3000);
 							}
 						}
 					});
@@ -182,12 +224,15 @@ window.onload = function() {
 					dataType: "json",
 					data: {email: savedEmail, picture: input1Lbl.innerText},
 					success: function(result) {
-						if (result == 0) {
-							
-						}
-						else {
+						if (result == 1) {
+							notify("Changed picture!");
 							window.localStorage.setItem("picture", input1Lbl.innerText);
-							input1Lbl.innerText = "";
+							input1Lbl.innerText = "New " + window.localStorage.getItem('change');
+							input1Lbl.style.opacity = "1";
+
+							setTimeout(function() {
+									location.href = "../pages/account.html";
+							},3000);
 						}
 					}
 				});
