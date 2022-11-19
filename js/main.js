@@ -38,48 +38,70 @@ window.onload = function() {
 	})();
 
 	// insert blog cards
-	for (let i = 0; i < 3; i++) {
-		var card = document.getElementsByClassName("card")[0].cloneNode(true);
-		card.className = "card";
-		card.style.display = "block";
-		
-		if (i == 0) {
-			card.style.left = "calc(50% - 296px/2 - 420px)";
-		}
-		else if (i == 1) {
-			card.style.left = "calc(50% - 296px/2)";
-		}
-		else if (i == 2) {
-			card.style.left = "calc(50% - 296px/2 + 420px)";
-		}
+	$.ajax({
+		url: "../PHP/getBlogs.php",
+		type: "post",
+		dataType: "json",
+		data: {randomPost: ""},
+		success: function(result) {
+			var counterX = 0;
+			var counterY = 0;
+			for (let i = 0; i < result.length; i++) {
+				if (counterX > 2) {
+					counterX = 0;
+					counterY += 380;
+				}
 
-		card.childNodes[1].style.background = "url('../assets/blogImage" + (i+1).toString() + ".png')"; 
-		card.childNodes[1].style.backgroundSize = "cover";
+				var card = document.getElementsByClassName("card")[0].cloneNode(true);
+				card.className = "card";
+				card.style.display = "block";
+				
+				if (counterX == 0) {
+					card.style.left = "calc(50% - 296px/2 - 420px)";
+					card.style.top = counterY+"px";
+				}
+				else if (counterX == 1) {
+					card.style.left = "calc(50% - 296px/2)";
+					card.style.top = counterY+"px";
+				}
+				else if (counterX == 2) {
+					card.style.left = "calc(50% - 296px/2 + 420px)";
+					card.style.top = counterY+"px";
+				}
+				
+				card.childNodes[3].childNodes[1].innerText = result[i].blogTitle;
+				card.childNodes[3].childNodes[3].innerText = result[i].blogDescription;
+				card.childNodes[1].style.background = "url('../assets/"+ result[i].blogPicture +"')"; 
+				card.childNodes[1].style.backgroundSize = "cover";
 
-		card.onclick = function() {
-			location.href = "./viewBlog.html";
-		}
-		
-		document.getElementById("cardList").appendChild(card);
-	}
+				card.onclick = function() {
+					location.href = "./viewBlog.html";
+				}
+				
+				document.getElementById("cardList").appendChild(card);
 
-	var cards = document.getElementsByClassName("card");
-
-	(function() {
-		for (let i = 0; i < cards.length; i++) {
-			cards[i].onmouseover = function(e) {
-				cards[i].style.boxShadow = "10px 10px 20px rgba(0,0,0,.5)";
-				cards[i].style.padding = "5px";
-				cards[i].childNodes[1].style.marginBottom = "50px";
-				cards[i].childNodes[3].style.top = "calc(50% - 50px)";
+				counterX += 1;
 			}
 
-			cards[i].onmouseleave = function(e) {
-				cards[i].style.boxShadow = "none";
-				cards[i].style.padding = "0px";
-				cards[i].childNodes[1].style.marginBottom = "0px";
-				cards[i].childNodes[3].style.top = "50%";
-			}
-		}
-	})();
+			var cards = document.getElementsByClassName("card");
+
+			(function() {
+				for (let i = 0; i < cards.length; i++) {
+					cards[i].onmouseover = function(e) {
+						cards[i].style.boxShadow = "10px 10px 20px rgba(0,0,0,.5)";
+						cards[i].style.padding = "5px";
+						cards[i].childNodes[1].style.marginBottom = "50px";
+						cards[i].childNodes[3].style.top = "calc(50% - 50px)";
+					}
+
+					cards[i].onmouseleave = function(e) {
+						cards[i].style.boxShadow = "none";
+						cards[i].style.padding = "0px";
+						cards[i].childNodes[1].style.marginBottom = "0px";
+						cards[i].childNodes[3].style.top = "50%";
+					}
+				}
+			})();
+		},
+	});
 }

@@ -20,35 +20,56 @@ var previewImage = document.getElementsByClassName('cardHead')[0];
 
 var navItems = document.body.getElementsByClassName("navItem");
 
-window.onload = function() {
-	document.body.style.opacity = "1";
-	
-	document.getElementById('title').innerText = "Welcome, " + window.localStorage.getItem('name');
+var notificationActive = false;
 
-	(function() {
-		for (let i = 0; i < navItems.length; i++) {
-			navItems[i].onmouseover = function(e) {
-				navItems[i].style.transition = "all .2s";
-				navItems[i].style.padding = "10px";
-				navItems[i].style.boxShadow = "0px 0px 20px rgba(0,0,0,.1)";
-				navItems[i].style.borderBottom = "4px solid #FF6464";
-			}
+function notify(message) {
+	if (notificationActive == false) {
+		notificationActive = true;
 
-			navItems[i].onmouseleave = function(e) {
-				navItems[i].style.padding = "0px";
-				navItems[i].style.boxShadow = "none";
-				navItems[i].style.borderBottom = "0";
-			}
-		}
-	})();
+		var notificationBox = document.getElementById("notificationBox");
+		notificationBox.style.opacity = "1";
+		notificationBox.style.bottom = "25px";
 
-	setTimeout(function() {
-		document.getElementById('addBtn').style.transform = "rotate(45deg)";
-	},1000);
+		var notificationMessage = document.getElementById("notificationMessage");
+		notificationMessage.innerText = message;
+
+		var notificationTimer = document.getElementById("notificationTimer");
+		notificationTimer.style.transition = "all 3s linear";
+		notificationTimer.style.marginRight = "100%";
+
+		setTimeout(function() {
+			notificationBox.style.opacity = "0";
+			notificationBox.style.bottom = "-25px";
+
+			setTimeout(function() {
+				notificationTimer.style.transition = "";
+				notificationTimer.style.margin = "0";
+				notificationActive = false;
+			},1000);
+		},3000)
+	}
 }
 
-function addBlog(blogTitle, blogDescription, blogContent, blogPicture) {
+function addBlog(blogTitle, blogDescription, blogPicture, blogContent) {
+	$.ajax({
+		url: "../PHP/addBlog.php",
+		type: "post",
+		dataType: "json",
+		data: {blogTitle: blogTitle, blogDescription: blogDescription, blogPicture: blogPicture, blogContent: blogContent},
+		success: function(result) {
+			if (result == 1) {
+				notify("Blog added!");
 
+				setTimeout(function() {
+					location.href = "../pages/main.html";
+				},3000);
+			}
+			else
+			{
+				notify("Something went wrong!");
+			}
+		}
+	});
 }
 
 function editInput(control) {
@@ -102,3 +123,39 @@ blogDescriptionInput.addEventListener("keydown", function(e) {
 blogDescriptionInput.addEventListener("keyup", function(e) {
 	previewDesc.innerText = blogDescriptionInput.value;
 })
+
+submitBtn.onclick = function() {
+	if (blogTitleInput.value != "" && blogDescriptionInput != "" && blogContentInput.value != "" && blogPictureLbl.innerText != "Blog Picture") {
+		addBlog(blogTitleInput.value, blogDescriptionInput.value, blogPictureLbl.innerText, blogContentInput.value);
+	}
+	else {
+		notify("Some fields are empty!");
+	}
+}
+
+window.onload = function() {
+	document.body.style.opacity = "1";
+
+	document.getElementById('title').innerText = "Welcome, " + window.localStorage.getItem('name');
+
+	(function() {
+		for (let i = 0; i < navItems.length; i++) {
+			navItems[i].onmouseover = function(e) {
+				navItems[i].style.transition = "all .2s";
+				navItems[i].style.padding = "10px";
+				navItems[i].style.boxShadow = "0px 0px 20px rgba(0,0,0,.1)";
+				navItems[i].style.borderBottom = "4px solid #FF6464";
+			}
+
+			navItems[i].onmouseleave = function(e) {
+				navItems[i].style.padding = "0px";
+				navItems[i].style.boxShadow = "none";
+				navItems[i].style.borderBottom = "0";
+			}
+		}
+	})();
+
+	setTimeout(function() {
+		document.getElementById('addBtn').style.transform = "rotate(45deg)";
+	},1000);
+}
