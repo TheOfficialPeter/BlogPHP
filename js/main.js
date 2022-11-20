@@ -75,6 +75,7 @@ window.onload = function() {
 				card.childNodes[1].style.backgroundSize = "cover";
 
 				card.onclick = function() {
+					window.localStorage.setItem("blogName", card.childNodes[3].childNodes[1].innerText);
 					location.href = "./viewBlog.html";
 				}
 				
