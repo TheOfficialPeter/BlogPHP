@@ -73,6 +73,7 @@ window.onload = function() {
 				card.childNodes[3].childNodes[3].innerText = result[i].blogDescription;
 				card.childNodes[1].style.background = "url('../assets/"+ result[i].blogPicture +"')"; 
 				card.childNodes[1].style.backgroundSize = "cover";
+				card.childNodes[3].style.overflow = "hidden";
 
 				card.onclick = function() {
 					window.localStorage.setItem("blogName", card.childNodes[3].childNodes[1].innerText);
@@ -89,7 +90,7 @@ window.onload = function() {
 			(function() {
 				for (let i = 0; i < cards.length; i++) {
 					cards[i].onmouseover = function(e) {
-						cards[i].style.boxShadow = "10px 10px 20px rgba(0,0,0,.5)";
+						cards[i].style.boxShadow = "10px 10px 20px rgba(0,0,0,.2)";
 						cards[i].style.padding = "5px";
 						cards[i].childNodes[1].style.marginBottom = "50px";
 						cards[i].childNodes[3].style.top = "calc(50% - 50px)";
